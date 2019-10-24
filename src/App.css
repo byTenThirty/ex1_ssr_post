@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a { color: black; text-decoration: none;}
+
+
+.list-title {
+  width: 30%;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+  color: rgb(138,43,226);
+  padding: 10px;
+  text-align: center;
+}
+
+.list-li {
+  margin: 10px auto;
+  width: 40%;
+  border: 1px solid ;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.list-li:hover {
+  border: 3px solid rgb(138,43,226);
+}
+.li-span {
+  float: right;
+  font-size: 20px;
+  color: rgb(138,43,226);
+}
+
+.detail-content {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}

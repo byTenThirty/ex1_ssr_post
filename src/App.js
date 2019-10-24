@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
-import TodoInput from './components/todo/TodoInput';
-import TodoList from './components/todo/TodoList';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import './App.css';
+import Home from './routes/Home';
+import Detail from './routes/Detail';
 
-function App() {
-  const [todos, setTodos] = useState([]);
-
-  const handleSubmit = (value) => {
-    setTodos([...todos, { id: Date.now(), value: value, done: false, }]);
-  };
-
-  const handleChangeDone = (id) => {
-    const index = todos.findIndex(t => t.id === id);
-    setTodos(prev => [...prev.slice(0, index), { ...prev[index], done: !prev[index].done }, ...prev.slice(index + 1)]);
-  };
-
-  const handleDelete = (id) => {
-    setTodos(prev => prev.filter(t => t.id !== id));
-  };
-
-  return (
-    <div className="App">
-      <TodoInput onSubmit={handleSubmit} />
-      <TodoList todos={todos} onChangeDone={handleChangeDone} onDelete={handleDelete} />
-    </div>
-  );
-}
+const App = () => (
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/todo/:id" component={Detail} />
+        </Switch>
+    </BrowserRouter>
+);
 
 export default App;
