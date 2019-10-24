@@ -16,18 +16,20 @@ const Home = () => {
 	return (
 		<div className="App">
 			<div className="list-title">
-				<h3>CSR 리스트</h3>
+				<h3>클라이언트사이드 리스트</h3>
 			</div>
-			<ul>
-				{todos.map(todo =>
-					<Link to={`/todo/${todo.id}`}>
-						 <li key={todo.id} className="list-li">
-							 {todo.title}
-							<span className="li-span">></span>
-						 </li>
-					</Link>
-				)}
-			</ul>
+			<div className="list-content">
+				<ul>
+					{todos.map(todo =>
+						<Link to={`/todo/${todo.id}`}>
+							<li key={todo.id} className="list-li">
+								{todo.title}
+								<span className="li-span">></span>
+							</li>
+						</Link>
+					)}
+				</ul>
+			</div>
 		</div>
 	);
 };

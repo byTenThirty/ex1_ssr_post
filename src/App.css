@@ -12,22 +12,28 @@ a { color: black; text-decoration: none;}
 .list-title {
   width: 30%;
   margin: 0 auto;
-  border-bottom: 1px solid black;
   color: rgb(138,43,226);
   padding: 10px;
   text-align: center;
 }
 
+.list-content {
+  width: 50%;
+  margin: 20px auto;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px black;
+}
+
 .list-li {
   margin: 10px auto;
   width: 40%;
-  border: 1px solid ;
+  border-bottom: 1px solid ;
   padding: 20px;
-  border-radius: 10px;
 }
 
 .list-li:hover {
-  border: 3px solid rgb(138,43,226);
+  border-bottom: 3px solid rgb(138,43,226);
 }
 .li-span {
   float: right;
@@ -39,4 +45,7 @@ a { color: black; text-decoration: none;}
   margin: 0 auto;
   padding: 10px;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px black;
+  width: 40%;
 }
