@@ -15,9 +15,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.0.1"
   },
+  "devDependencies": {
+    "cross-env": "^6.0.3"
+  },
   "scripts": {
-    "build-server": "babel src --out-dir dist-server --config-file ./.babelrc.common.js",
-    "start-server": "node dist-server/server.js",
+    "start-server": "node --cross-env IS_SERVER=true server/parser.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

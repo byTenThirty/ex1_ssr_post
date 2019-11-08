@@ -4,10 +4,10 @@ import axios from 'axios';
 
 const Detail = () => {
 	const { id } = useParams();
-	const [todo, setTodo] = useState();
+	const [post, setTodo] = useState();
 
 	useEffect(() => {
-		axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
+		axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
 			.then(response => {
 				setTodo(response.data);
 			});
@@ -15,13 +15,14 @@ const Detail = () => {
 
 	return (
 		<>
-			{todo && (
+			{post && (
 				<div>
 					<div className="list-title">
 						<h3>클라이언트사이드 리스트</h3>
 					</div>
 					<div className="detail-content">
-						<h2>{`${todo.id}. ${todo.title}`}</h2>
+						<h2>{`${post.id}. ${post.title}`}</h2>
+						<p>{post.body}</p>
 					</div>
 				</div>
 			)}

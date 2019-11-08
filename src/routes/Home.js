@@ -4,12 +4,12 @@ import axios from 'axios';
 import '../App.css';
 
 const Home = () => {
-	const [todos, setTodos] = useState([]);
+	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		axios.get('https://jsonplaceholder.typicode.com/todos')
+		axios.get('https://jsonplaceholder.typicode.com/posts')
 			.then((response) => {
-				setTodos(response.data);
+				setPosts(response.data);
 			});
 	}, []);
 
@@ -20,10 +20,10 @@ const Home = () => {
 			</div>
 			<div className="list-content">
 				<ul>
-					{todos.map(todo =>
-						<Link to={`/todo/${todo.id}`}>
-							<li key={todo.id} className="list-li">
-								{todo.title}
+					{posts.map(post =>
+						<Link key={post.id} to={`/post/${post.id}`}>
+							<li key={post.id} className="list-li">
+								{post.title}
 								<span className="li-span">></span>
 							</li>
 						</Link>
