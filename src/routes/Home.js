@@ -9,6 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
+import Typography from '@material-ui/core/Typography';
 
 const Home = () => {
 	const [posts, setPosts] = useState([]);
@@ -24,47 +25,36 @@ const Home = () => {
 	const handleChangePage = (event, newPage) => {
 		setPage(newPage);
 	};
-	
 
 	return (
-		<div className="App">
-			<div className="list-title">
-				<h3>서버사이드 리스트</h3>
-			</div>
-			<Paper >
-					<div >
-						<Table stickyHeader aria-label="sticky table">
+		<div>
+			<Typography variant="h4" gutterBottom={true}>Post list</Typography>
+			<Paper>
+				<div>
+					<Table stickyHeader aria-label="sticky table">
 						<TableHead>
 							<TableRow>
-							
 								<TableCell align="center">
 									ID
 								</TableCell>
-								<TableCell align="center">
+								<TableCell>
 									제목
 								</TableCell>
-								<TableCell align="center">
-									본문
-								</TableCell>
-							
 							</TableRow>
 						</TableHead>
 						<TableBody>
 							{posts.slice(page * 5, page * 5 + 5).map((row, index) => {
 								return (
-									<TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+									<TableRow hover key={row.id}>
 										<TableCell key={`${row.id}`} align="center">
 											{row.id}
 										</TableCell>
-										<TableCell key={`${row.id}_${index}`} align="center">
-											{row.title}
-										</TableCell>
-										<TableCell key={index} align="center">
-											{row.body}
+										<TableCell key={`${row.id}_${index}`}>
+											<Link to={`/post/${row.id}`}>{row.title}</Link>
 										</TableCell>
 									</TableRow>
 								);
-							})}	
+							})}
 						</TableBody>
 					</Table>
 				</div>

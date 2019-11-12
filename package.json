@@ -20,7 +20,7 @@
     "cross-env": "^6.0.3"
   },
   "scripts": {
-    "start-server": "node --cross-env IS_SERVER=true server/parser.js",
+    "start-server": "cross-env IS_SERVER=true node server/parser.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
